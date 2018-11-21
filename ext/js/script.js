@@ -19,18 +19,20 @@ function indexOfMax(arr) {
 labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
 
 
-    em_txt = document.getElementById("emotion")
-    chrome.tabs.getSelected(null, function (tab) {
+em_txt = document.getElementById("emotion")
+chrome.tabs.getSelected(null, function(tab) {
 
-      var url = new URL(tab.url)
-      var domain = url.hostname
-      chrome.storage.sync.get(['domains', 'emotion'], function(items) {
-          domains = items.domains
-          emotion = items.emotion
-          if (domains != undefined) {
+    var url = new URL(tab.url)
+    var domain = url.hostname
+    chrome.storage.sync.get(['domains', 'emotion'], function(items) {
+        domains = items.domains
+        emotion = items.emotion
+        if (domains != undefined) {
             i = domains.indexOf(domain)
             if (i != -1) {
                 em = indexOfMax(emotion[i])
                 em_txt.innerText = labels[em]
-      }}});
-    })
+            }
+        }
+    });
+})

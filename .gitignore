@@ -2,3 +2,4 @@
 *.pkl
 *.log
 .DS_Store
+.idea/

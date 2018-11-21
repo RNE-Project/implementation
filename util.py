@@ -11,13 +11,16 @@ import cv2
 import numpy as np
 from scipy.misc import imread, imresize
 
+
 def load_image(image_path, grayscale=False, target_size=None):
     pil_image = image.load_img(image_path, grayscale, target_size)
     return image.img_to_array(pil_image)
 
+
 def load_detection_model(model_path):
     detection_model = cv2.CascadeClassifier(model_path)
     return detection_model
+
 
 def detect_faces(detection_model, gray_image_array):
     return detection_model.detectMultiScale(gray_image_array, 1.3, 5)
@@ -52,6 +55,7 @@ def get_class_to_arg(dataset_name='fer2013'):
     else:
         raise Exception('Invalid dataset name')
 
+
 def preprocess_input(x, v2=True):
     x = x.astype('float32')
     x = x / 255.0
@@ -62,11 +66,11 @@ def preprocess_input(x, v2=True):
 
 
 def _imread(image_name):
-        return imread(image_name)
+    return imread(image_name)
 
 
 def _imresize(image_array, size):
-        return imresize(image_array, size)
+    return imresize(image_array, size)
 
 
 def to_categorical(integer_classes, num_classes=2):

@@ -2,79 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18e5919a-0705-4f16-80a9-c9b678302710" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/REQUIREMENTS.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/12_angry_men.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/color_demo.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/demo_results.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/emotion_classification.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/gradcam_results.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/robocup_team.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/solvay_conference.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/test_image.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/image_emotion_gender_demo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/image_gradcam_demo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inference.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/cnn.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/train_emotion_classifier.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/train_gender_classifier.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/data_augmentation.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/datasets.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/grad_cam.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/preprocessor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/visualizer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/video_emotion_color_demo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/video_emotion_gender_demo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/video_gradcam_demo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/emotion_gender_processor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/faces.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/detection_models/haarcascade_frontalface_default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/face.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/KDEF_emotion_training.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.00-0.47.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.02-0.52.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.03-0.53.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.04-0.55.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.05-0.56.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.08-0.57.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.10-0.58.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.100-0.65.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.102-0.66.hdf5" beforeDir="false" afterPath="$PROJECT_DIR$/emotion.hdf5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.107-0.66.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.11-0.58.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.110-0.65.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.12-0.58.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.14-0.59.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.15-0.60.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.25-0.60.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.27-0.62.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.29-0.62.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.32-0.62.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.37-0.62.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.38-0.62.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.41-0.62.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.43-0.64.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.51-0.63.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.70-0.63.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.97-0.65.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/fer2013_mini_XCEPTION.99-0.65.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/mini_XCEPTION_KDEF.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/simple_CNN.530-0.65.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/simple_CNN.985-0.66.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/emotion_models/tiny_XCEPTION_KDEF.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/fer2013_big_XCEPTION.54-0.66.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/fer2013_mini_XCEPTION.119-0.65.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/gender_models/gender_mini_XCEPTION.21-0.95.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_models/gender_models/simple_CNN.81-0.96.hdf5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ext/js/background.js" beforeDir="false" afterPath="$PROJECT_DIR$/ext/js/background.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ext/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/ext/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ext/src/browser_action/browser_action.html" beforeDir="false" afterPath="$PROJECT_DIR$/ext/src/browser_action/browser_action.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,21 +49,38 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1738525685">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="gitignore" value="1" />
+          <entry key="html" value="1" />
+          <entry key="js" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="1" />
+          <entry key="JavaScript" value="2" />
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+            <state relative-caret-position="470">
+              <caret line="106" column="20" lean-forward="true" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="20" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <marker date="1542187027869" expanded="true" signature="971:1277" ph="..." />
-                <marker date="1542187027869" expanded="true" signature="1089:1277" ph="..." />
-                <marker date="1542187027869" expanded="true" signature="1443:2476" ph="..." />
-                <marker date="1542187027869" expanded="true" signature="2497:2791" ph="..." />
-                <marker date="1542187027869" expanded="true" signature="2736:2741" ph="..." />
               </folding>
             </state>
           </provider>
@@ -137,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+            <state relative-caret-position="198">
+              <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -147,10 +99,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ext/js/background.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="918">
+              <caret line="54" column="24" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
+            <state relative-caret-position="34">
               <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ext/js/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ext/src/browser_action/browser_action.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -169,15 +157,20 @@
         <option value="$PROJECT_DIR$/src/utils/preprocessor.py" />
         <option value="$PROJECT_DIR$/src/utils/inference.py" />
         <option value="$PROJECT_DIR$/src/main.py" />
+        <option value="$PROJECT_DIR$/util.py" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/ext/js/background.js" />
+        <option value="$PROJECT_DIR$/ext/js/script.js" />
+        <option value="$PROJECT_DIR$/ext/src/browser_action/browser_action.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1366" />
-    <option name="height" value="677" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="22" />
+    <option name="width" value="1367" />
+    <option name="height" value="678" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -189,8 +182,32 @@
         <subPane>
           <expand>
             <path>
-              <item name="face_classification" type="b2602c69:ProjectViewProjectNode" />
-              <item name="face_classification" type="462c0819:PsiDirectoryNode" />
+              <item name="implementation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="implementation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="implementation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="implementation" type="462c0819:PsiDirectoryNode" />
+              <item name="ext" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="implementation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="implementation" type="462c0819:PsiDirectoryNode" />
+              <item name="ext" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="implementation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="implementation" type="462c0819:PsiDirectoryNode" />
+              <item name="ext" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="implementation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="implementation" type="462c0819:PsiDirectoryNode" />
+              <item name="ext" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="browser_action" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -256,10 +273,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1366" height="677" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2669145" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18572372" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -293,42 +310,58 @@
     <entry file="file://$PROJECT_DIR$/src/utils/data_augmentation.py" />
     <entry file="file://$PROJECT_DIR$/src/web/emotion_gender_processor.py" />
     <entry file="file://$PROJECT_DIR$/src/inference.py" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="6" />
+        <state relative-caret-position="470">
+          <caret line="106" column="20" lean-forward="true" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+        <state relative-caret-position="198">
+          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/js/background.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="54" column="24" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="34">
           <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/ext/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <marker date="1542187027869" expanded="true" signature="971:1277" ph="..." />
-            <marker date="1542187027869" expanded="true" signature="1089:1277" ph="..." />
-            <marker date="1542187027869" expanded="true" signature="1443:2476" ph="..." />
-            <marker date="1542187027869" expanded="true" signature="2497:2791" ph="..." />
-            <marker date="1542187027869" expanded="true" signature="2736:2741" ph="..." />
-          </folding>
+        <state relative-caret-position="408">
+          <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ext/src/browser_action/browser_action.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
         </state>
       </provider>
     </entry>

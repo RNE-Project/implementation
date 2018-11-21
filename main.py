@@ -11,7 +11,6 @@ from threading import Thread
 from os import listdir
 from os.path import isfile, join
 
-
 # parameters for loading data and images
 detection_model_path = 'face.xml'
 emotion_model_path = 'emotion.hdf5'
@@ -35,14 +34,16 @@ emotion_target_size = emotion_classifier.input_shape[1:3]
 # starting video streaming
 
 
-#counter
+# counter
 emotion_counter = [0] * 7
 
 server = WebsocketServer(13254, host='127.0.0.1', loglevel=logging.INFO)
 
+
 def websocket_thread(threadname):
     global conn
     global server
+
     def new_client(client, server):
         global conn
 
@@ -50,19 +51,20 @@ def websocket_thread(threadname):
 
     def client_left(client, server):
         global conn
-        
-        conn = False	
 
+        conn = False
 
     server.set_fn_new_client(new_client)
     server.set_fn_client_left(client_left)
     server.run_forever()
 
+
 def notif(msg, title):
     cmd = "display notification \"{}\" with title \"{}\"".format(msg, title)
-    #cmd = b"""display notification "Notification message" with title "Title" Subtitle "Subtitle" """
+    # cmd = b"""display notification "Notification message" with title "Title" Subtitle "Subtitle" """
     Popen(["osascript", '-'], stdin=PIPE, stdout=PIPE).communicate(str.encode(cmd))
-    
+
+
 def pred_from_img(gray_image):
     faces = detect_faces(face_detection, gray_image)
     ar = []
@@ -93,7 +95,7 @@ def processing_thread(threadname):
             bgr_image = video_capture.read()[1]
             gray_image = cv2.cvtColor(bgr_image, cv2.COLOR_BGR2GRAY)
             em = pred_from_img(gray_image)
-            
+
             for e in em:
                 emotion_counter[e] += 1
 
@@ -104,13 +106,14 @@ def processing_thread(threadname):
             print(e)
             continue
 
+
 class App(rumps.App):
     def __init__(self):
         super(App, self).__init__("RNE")
         self.menu = ["Check stats", "Order photos"]
-        thread1 = Thread( target=websocket_thread, args=("Thread-1", ) )
-        thread2 = Thread( target=processing_thread, args=("Thread-2", ) )
-        
+        thread1 = Thread(target=websocket_thread, args=("Thread-1",))
+        thread2 = Thread(target=processing_thread, args=("Thread-2",))
+
         thread1.start()
         thread2.start()
 
@@ -119,12 +122,11 @@ class App(rumps.App):
         s = sum(emotion_counter)
         data = ""
         for i in range(7):
-            percent = emotion_counter[i]*100/s
+            percent = emotion_counter[i] * 100 / s
             data += "{}: {}% ".format(emotion_labels[i], int(percent))
             notif(data, "Percentage")
-        #print(data)
+        # print(data)
 
-        
     @rumps.clicked("Order photos")
     def order(self, _):
         path = "/Users/mac/Desktop/photos/"
@@ -138,16 +140,14 @@ class App(rumps.App):
             img = cv2.imread(join(path, file), 0)
             em = pred_from_img(img)
             if em:
-                counter = [0]*7
+                counter = [0] * 7
                 for el in em:
                     counter[el] += 1
                 category = counter.index(max(counter))
 
                 category = emotion_labels[category]
                 d = join(path, category)
-                os.rename(join(path, file), join(d, file))               
+                os.rename(join(path, file), join(d, file))
+
 
 App().run()
-
-
-
