@@ -26,13 +26,14 @@ emotion_offsets = (20, 40)
 
 # loading models
 face_detection = load_detection_model(detection_model_path)
-emotion_classifier = load_model(emotion_model_path, compile=False)
 
+emotion_classifier = load_model(emotion_model_path, compile=False)
+emotion_classifier._make_predict_function()
 # getting input model shapes for inference
 emotion_target_size = emotion_classifier.input_shape[1:3]
 
 # starting video streaming
-video_capture = cv2.VideoCapture(0)
+
 
 #counter
 emotion_counter = [0] * 7
@@ -43,9 +44,13 @@ def websocket_thread(threadname):
     global conn
     global server
     def new_client(client, server):
+        global conn
+
         conn = True
 
     def client_left(client, server):
+        global conn
+        
         conn = False	
 
 
@@ -81,6 +86,7 @@ def pred_from_img(gray_image):
 def processing_thread(threadname):
     global conn
     global server
+    video_capture = cv2.VideoCapture(0)
     while True:
         try:
 
@@ -92,10 +98,10 @@ def processing_thread(threadname):
                 emotion_counter[e] += 1
 
                 if conn:
-                    server.send_message_to_all("hi")
-    
-                emotion_text = emotion_labels[e]
-        except:
+                    server.send_message_to_all(str(e))
+
+        except Exception as e:
+            print(e)
             continue
 
 class App(rumps.App):
@@ -105,21 +111,23 @@ class App(rumps.App):
         thread1 = Thread( target=websocket_thread, args=("Thread-1", ) )
         thread2 = Thread( target=processing_thread, args=("Thread-2", ) )
         
-        thread1.join()
-        thread2.join()
+        thread1.start()
+        thread2.start()
 
     @rumps.clicked("Check stats")
     def check_stats(self, _):
         s = sum(emotion_counter)
         data = ""
         for i in range(7):
-            emotion_counter[i]*100/s = percent
-            data += "{}: {} %\n".format(emotion_labels[i], int(percent))
-        notif(data, text)
+            percent = emotion_counter[i]*100/s
+            data += "{}: {}% ".format(emotion_labels[i], int(percent))
+            notif(data, "Percentage")
+        #print(data)
+
         
     @rumps.clicked("Order photos")
     def order(self, _):
-        path = ""
+        path = "/Users/mac/Desktop/photos/"
         files = [f for f in listdir(path) if isfile(join(path, f))]
         for i in range(7):
             try:
@@ -127,13 +135,15 @@ class App(rumps.App):
             except:
                 continue
         for file in files:
-            img = cv2.imread(file, 0)
+            img = cv2.imread(join(path, file), 0)
             em = pred_from_img(img)
-            if em != []:
+            if em:
                 counter = [0]*7
-                for e in em:
-                    counter[0] += 1
+                for el in em:
+                    counter[el] += 1
                 category = counter.index(max(counter))
+
+                category = emotion_labels[category]
                 d = join(path, category)
                 os.rename(join(path, file), join(d, file))               
 
