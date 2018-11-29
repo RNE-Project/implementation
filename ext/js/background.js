@@ -7,49 +7,62 @@ chrome.runtime.onInstalled.addListener(function() {
 
 var ws = new WebSocket("ws://localhost:13254")
 
-console.log("running")
 
-buffer_domain = []
-buffer_emotion = []
-
-msg = undefined
+buffer = {}
 
 ws.onmessage = function(m) {
-    msg = m.data
+    tab_handler(parseInt(m.data))
 }
+
+function tab_handler(em) {
+    chrome.tabs.getSelected(null, function(tab) {
+        if (tab != null) {
+            var url = new URL(tab.url)
+            domain = url.hostname
+
+            i = Object.keys(buffer).indexOf(domain)
+            if (i == -1) {
+                buffer[domain] = [0, 0, 0, 0, 0, 0, 0]
+            }
+            buffer[domain][em] += 1
+        }
+    })
+}
+
 
 function timer() {
-    if (msg != undefined) {
-        chrome.tabs.getSelected(null, function(tab) {
-            if (tab != null) {
-                var url = new URL(tab.url)
-                domain = url.hostname
-                chrome.storage.sync.get(['domains', 'emotion'], function(items) {
-                    domains = items.domains
-                    emotion = items.emotion
-                    if (domains != undefined) {
-                        i = domains.indexOf(domain)
-                        if (i != -1 && domains.length != 0) {
-                            emotion[i][parseInt(msg)] += 1
+    chrome.storage.sync.get(['domains', 'emotion'], function(items) {
+        domains = items.domains
+        emotion = items.emotion
 
-                            chrome.storage.sync.set({
-                                'emotion': emotion
-                            })
-                        } else {
-                            console.log(domains, emotion)
-                            domains.push(domain)
-                            emotion.push([0, 0, 0, 0, 0, 0, 0])
-                            chrome.storage.sync.set({
-                                'domains': domains,
-                                'emotion': emotion
-                            })
-                        }
+        if (domains == undefined) {
+            domains = []
+            emotion = []
+            Object.keys(buffer).forEach(function(key) {
+                domains.push(key)
+                emotion.push(buffer[key])
+            });
+
+        } else {
+            Object.keys(buffer).forEach(function(key) {
+                i = domains.indexOf(key)
+
+                if (i == -1) {
+                    domains.push(key)
+                    emotion.push(buffer[key])
+                } else {
+                    for (var x = 0; x < 7; x++) {
+                        emotion[i][x] += buffer[key][x]
                     }
-                })
-            }
-        })
-    }
+                }
+            });
+            buffer = {}
+            console.log(emotion)
+            chrome.storage.sync.set({
+                'domains': domains,
+                'emotion': emotion
+            })
+        }
+    })
 }
-
-
-setInterval(timer, 1000)
+setInterval(timer, 3000)

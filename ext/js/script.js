@@ -18,19 +18,8 @@
     return maxIndex;
 }*/
 
+
 labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
-
-
-domain = document.querySelector("#domain")
-var chart = new CanvasJS.Chart("chart", {
-	animationEnabled: true,
-	theme: "light2", // "light1", "light2", "dark1", "dark2"
-	data: [{
-		type: "column",
-		showInLegend: true,
-		legendMarkerColor: "grey",
-	}]
-});
 
 
 
@@ -38,7 +27,6 @@ chrome.tabs.getSelected(null, function(tab) {
 
     var url = new URL(tab.url)
     var domain = url.hostname
-    chart.title.text = domain
 
     chrome.storage.sync.get(['domains', 'emotion'], function(items) {
         domains = items.domains
@@ -48,12 +36,23 @@ chrome.tabs.getSelected(null, function(tab) {
             if (i != -1) {
                 current_em = emotion[i]
                 dataPoints = []
-                for (var x = 0; x < 7; x++) {
-                    dataPoints.join({y: current_em[x], label: labels[x]})
+                for (var x = 0; x < 6; x++) {
+                    dataPoints.push({y: current_em[x], label: labels[x]})
                 }
-                chart.data[0].dataPoints = dataPoints
+                var chart = new CanvasJS.Chart("chart", {
+                    animationEnabled: true,
+                    theme: "light2", // "light1", "light2", "dark1", "dark2"
+                    title:{
+                        text: domain.slice(4, -4)
+                    },
+                    data: [{
+                        type: "column",
+                        legendMarkerColor: "grey",
+                        dataPoints: dataPoints
+                    }]
+                });
                 chart.render();
             }
         }
     });
-})
+});

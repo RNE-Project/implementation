@@ -119,12 +119,13 @@ class App(rumps.App):
 
     @rumps.clicked("Check stats")
     def check_stats(self, _):
-        s = sum(emotion_counter)
+        em = emotion_counter
+        s = sum(em)
         data = ""
         for i in range(7):
-            percent = emotion_counter[i] * 100 / s
+            percent = (em[i]/s)*100
             data += "{}: {}% ".format(emotion_labels[i], int(percent))
-            notif(data, "Percentage")
+        notif(data, "Percentage")
         # print(data)
 
     @rumps.clicked("Order photos")
